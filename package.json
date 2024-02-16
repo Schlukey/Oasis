@@ -4,6 +4,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "bootstrap": "npm i --force-local && lerna run tsc",
+    "admin": "cd ./apps/admin && npm run start",
+    "client": "cd ./apps/client && npm run start",
+    "build:admin": "npm run bootstrap && (cd ./apps/admin && npm run build)",
+    "build:client": "npm run bootstrap && (cd ./apps/client && npm run build)",
+    "format:client": "prettier-eslint --eslint-config-path ./.eslintrc.json --write './apps/client/src/**/*.ts' './apps/client/src/**/*.tsx'",
+    "format:admin": "prettier-eslint --eslint-config-path ./.eslintrc.json --write './apps/admin/src/**/*.ts' './apps/admin/src/**/*.tsx'"
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
