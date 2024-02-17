@@ -11,7 +11,9 @@
     "build:admin": "npm run bootstrap && (cd ./apps/admin && npm run build)",
     "build:client": "npm run bootstrap && (cd ./apps/client && npm run build)",
     "format:client": "prettier-eslint --eslint-config-path ./.eslintrc.json --write './apps/client/src/**/*.ts' './apps/client/src/**/*.tsx'",
-    "format:admin": "prettier-eslint --eslint-config-path ./.eslintrc.json --write './apps/admin/src/**/*.ts' './apps/admin/src/**/*.tsx'"
+    "format:admin": "prettier-eslint --eslint-config-path ./.eslintrc.json --write './apps/admin/src/**/*.ts' './apps/admin/src/**/*.tsx'",
+    "backend": "cd ./backend/lib && node index.js",
+    "build:backend": "cd ./backend && npm i --force-local && npx tsc"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -20,8 +22,10 @@
     "@hookform/resolvers": "^3.3.4",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/node": "^20.11.19",
+    "cors": "^2.8.5",
     "firebase": "^10.8.0",
     "framer-motion": "^11.0.5",
+    "http": "^0.0.1-security",
     "react": "^18.2.0",
     "react-hook-form": "^7.50.1",
     "react-markdown": "^9.0.1",
@@ -29,7 +33,8 @@
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "lerna": "^8.1.2"
