@@ -1,6 +1,6 @@
 {
   "packages": [
-    "shared/*",
+    "shared-packages/*",
     "apps/**"
   ],
   "version": "1.0.0",

@@ -2,10 +2,10 @@
   "name": "@oasis/shared",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/shared.js",
   "scripts": {
     "tsc": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./__tests__/shared.test.js"
   },
   "author": "",
   "license": "ISC",
