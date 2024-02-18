@@ -1,6 +1,4 @@
 import { Base } from './base';
-import { Schema } from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
 import { ProductCategory } from './product-categories';
 
 export interface ProductDto extends Base {
@@ -11,16 +9,6 @@ export interface ProductDto extends Base {
   description: string;
   comments: Comment[]
 }
-
-export const ProductSchema = new Schema<ProductDto>({
-  id: { type: String, default: uuidv4 },
-  dateCreated: { type: Date, default: Date.now },
-  name: String,
-  category: String,
-  thumbnail: String,
-  productImages: Array,
-  description: String,
-});
 
 export interface ProductCreateForm {
   name: string;
