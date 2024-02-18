@@ -8,6 +8,7 @@ exports.UserSchema = new mongoose_1.Schema({
     dateCreated: { type: Date, default: Date.now },
     name: String,
     email: String,
+    password: String,
     storeName: String,
     products: Array,
     storeIcon: String,

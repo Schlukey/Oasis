@@ -7,4 +7,5 @@ exports.AdminUserSchema = new mongoose_1.Schema({
     id: { type: String, default: uuid_1.v4 },
     dateCreated: { type: Date, default: Date.now },
     email: String,
+    password: String,
 });
