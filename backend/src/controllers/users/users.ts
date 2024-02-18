@@ -1,4 +1,5 @@
 import { Users } from '../../config';
+import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 
 class UserController {

@@ -7,6 +7,7 @@ export interface User extends Base {
   name: string;
   email: string;
   storeName: string;
+  password: string;
   products?: ProductDto[];
   totalSales?: number;
   totalPurchases?: number;
@@ -19,6 +20,7 @@ export const UserSchema = new Schema<User>({
   dateCreated: { type: Date, default: Date.now },
   name: String,
   email: String,
+  password: String,
   storeName: String,
   products: Array,
   storeIcon: String,

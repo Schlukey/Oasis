@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { ConnectOptions } from 'mongoose';
 import express from 'express';
 import { UserSchema } from '../models/user';
 import { AdminUserSchema } from '../models/admins';
@@ -27,14 +27,22 @@ export const ProductCategories = mongoose.model(
 const db = mongoose.connection;
 const app = express();
 
-exports.connect = () => {
-  mongoose
-    .connect(baseUrl)
-    .then(() => {
-      console.log('connected to db');
-    })
-    .catch((e) => {
-      console.log(`connection failed: ${e}`);
-      process.exit(1);
-    });
+const connectDB = async () => {
+  try {
+    await mongoose
+      .connect(baseUrl, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+      } as ConnectOptions)
+      .then(() => {
+        console.log('connection successful');
+      });
+  } catch (error) {
+    console.log(`connection failed, ${error}`);
+    process.exit(1);
+  }
 };
+
+module.exports = connectDB;
